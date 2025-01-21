@@ -11,5 +11,10 @@ And then run it with
 
 I added a mount volume, so if you update any change it will reflect on your localhost
 
+
+OR you can just run the dev.sh file. If you can't run it, add executions permissions with
+`chmod +x filename.sh`
+
+
 > I'm using Jekyll Theme Serial Programmer: https://github.com/sharadcodes/jekyll-theme-serial-programmer
 > NOTE: You have to remove `url` and `baseurl` from `_config.yml` to use this theme for `<your-username>.github.io`
