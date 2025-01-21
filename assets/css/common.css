@@ -59,6 +59,29 @@
   --white-2: #a9abb3;
 }
 
+/* Social Icons Styling */
+#social-wrapper {
+  margin-top: 1rem;
+}
+
+#social-wrapper a {
+  transition: all 0.2s ease;
+}
+
+#social-wrapper a:hover {
+  transform: translateY(-2px);
+  opacity: 0.8;
+}
+
+.social-icon {
+  width: 24px;
+  height: 24px;
+}
+
+[data-theme="dark"] .social-icon {
+  filter: invert(1);
+}
+
 #category-modal-bg {
   position: fixed;
   top: 0;
