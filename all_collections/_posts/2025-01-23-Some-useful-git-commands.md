@@ -7,13 +7,20 @@ categories: [git, devops]
 
 As it happens often that I make a mess, let me start with revert :)
 
-## 1. Checking Your Commit History
-To view your commit history:
+# How to solve your mess
+
+### 1. Check your commit history
+
 ```bash
-git log
+git log —oneline —graph
 ```
 
-## 2. Moving Back in History
+You can personallice this output many forms. Here is one useful you can store on your config:
+```bash
+git config --global alias.lg 'log --color --graph --pretty="%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
+```
+
+### 2. Move Back in History
 
 To move back two commits:
 ```bash
@@ -37,7 +44,7 @@ git log --graph --oneline branch1..branch2
 
 ---
 
-## Git Fetch, Pull, and Merge
+# Git Fetch, Pull, and Merge
 
 ### 1. `git fetch`
 **What it does**:  
@@ -88,14 +95,16 @@ This merges `feature_branch` into your current branch.
 
 ---
 
-## How It Worked for Me: Final Organization
 
-To finalize the organization of my branches, I followed these steps:
+# How It Worked for Me: Final Organization
+
+When I finish my DevOps work and I want to leave everything in place, I followed these steps:
 
 ```bash
-git checkout main
+git checkout release
 git merge feature
 ```
+> **Note:** I don't merge to main branch, this is only done by a pull request.
 
 After running the merge command, you might see:
 ```plaintext
@@ -127,6 +136,36 @@ To delete the remote branch:
 git push origin --delete feature/test
 ```
 
+This workflow helps ensure that the repository remains clean and organized while effectively managing feature branches.
+
+
 ---
 
-This workflow helps ensure that the repository remains clean and organized while effectively managing feature branches.
+# How to find commits
+
+Find commits by person
+```bash
+git log --author="John Doe" #will show all commits done by specific author.
+git log --author="John Doe\|Joe Smith" #with this regex we asked for all commits authored by these two people.
+```
+
+Looking for a Jira ticker 
+```bash
+git log --grep="JIRA-1234"
+```
+
+To look at logs for specific file.
+```bash
+git log -- testfile01
+git log -- testfile-02 branchfile-01
+```
+
+To look for merges
+```bash
+git log —merge
+```
+
+To return only last commits
+```bash
+git log -1
+```

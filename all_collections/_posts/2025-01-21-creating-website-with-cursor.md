@@ -22,7 +22,7 @@ Alternatively, you can generate an almost-empty template using `jekyll new mysit
 2. The instructions to install Jekyll are on the first page of their [documentation](https://jekyllrb.com/docs/)
 If you want an easier route, you can clone my repository and run the Dockerfile to avoid installing everything locally. All you need is Docker installed, and then run the dev.sh file. It’s straightforward: it removes the container (if it exists), recreates the image (I’ll make this more efficient later to only update the necessary layer), and starts a container with a volume. This way, any changes you make locally will automatically reflect at localhost:4000. (If you check the Dockerfile, it includes the `--livereload`command, which helps with this as well).
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Link to my repo with Dockerfile](https://github.com/cmercadal/cmercadal.github.io/tree/main)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Link to my repo with Dockerfile](https://github.com/cmercadal/cmercadal.github.io/tree/main)
 
 3. If you work on a repository named yourusername.github.io, your page will be live at that same address!
 
